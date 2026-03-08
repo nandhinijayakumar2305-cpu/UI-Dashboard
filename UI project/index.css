@@ -1,0 +1,138 @@
+/* Common Style */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    background-color: #fbfbfb;
+    color: #1D252C;
+}
+
+/* Header */
+.top-header {
+    background-color: #a9dbfe;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.main-container {
+    display: flex;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+    width: 250px;
+    background-color: #1277d9;
+    height: calc(100vh - 60px);
+    color: #ffffff;
+    overflow-y: auto;
+}
+
+.menu-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.menu-item:hover {
+    background-color: #08345e;
+}
+
+.menu-item.active {
+    background-color: #0b4a87;
+}
+
+/* Submenu Animation */
+.submenu-content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #0b4a87;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.submenu-content.open {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.sub-item {
+    padding: 10px 20px 10px 50px;
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.05);
+}
+
+.sub-item:hover {
+    background-color: #08345e;
+}
+
+/* Table / Grid Style */
+.standard-grid {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.standard-grid th {
+    background-color: #e8e7e6;
+    color: #1D252C;
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #8898aa;
+}
+
+.standard-grid td {
+    padding: 12px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.clickable-row:hover td {
+    background-color: #d0eefc;
+    cursor: pointer;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-right: 10px;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: #1277D9;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0B4A87;
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: #1277d9;
+    border: 1px solid #1277d9;
+}
+
+.btn-secondary:hover {
+    background-color: #0B4A87;
+    color: #ffffff;
+}
+
+.btn-disabled {
+    background-color: #d1d1d1;
+    color: #666666;
+    border: none;
+    cursor: not-allowed;
+}

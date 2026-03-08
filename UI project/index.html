@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exela UI Professional Dashboard</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="top-header">
+        <div class="logo-area">
+            <img src="download.png" alt="Exela Technologies" height="30">
+        </div>
+        <div class="user-profile">
+            <span>Nandhini J | Last Login 8/07/2026</span>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <nav class="sidebar-menu">
+            <div class="menu-item active" onclick="loadContent('Dashboard')">
+                <span class="icon">📊</span> Dashboard
+            </div>
+            <div class="menu-item" onclick="loadContent('Application Configuration')">
+                <span class="icon">⚙️</span> Application Configuration
+            </div>
+            <div class="menu-item" onclick="loadContent('Entity Settings')">
+                <span class="icon">🏢</span> Entity Settings
+            </div>
+
+            <div class="menu-item has-submenu" onclick="toggleSubmenu(this)">
+                <span class="icon">👤</span> User Administration <span class="arrow">▼</span>
+            </div>
+            <div class="submenu-content">
+                <div class="sub-item" onclick="loadContent('User Setup')">User Setup</div>
+                <div class="sub-item" onclick="loadContent('Role Management')">Role Management</div>
+            </div>
+
+            <div class="menu-item has-submenu" onclick="toggleSubmenu(this)">
+                <span class="icon">🚚</span> Customer Delivery <span class="arrow">▼</span>
+            </div>
+            <div class="submenu-content">
+                <div class="sub-item" onclick="loadContent('Delivery Status')">Delivery Status</div>
+            </div>
+
+            <div class="menu-item" onclick="loadContent('File Upload')"><span class="icon">📁</span> File Upload</div>
+            <div class="menu-item" onclick="loadContent('File Upload Config')"><span class="icon">🛠️</span> File Upload Config</div>
+            <div class="menu-item" onclick="loadContent('Archive Reports')"><span class="icon">📦</span> Archive Reports</div>
+            <div class="menu-item" onclick="loadContent('Lockbox Exception')"><span class="icon">🔓</span> Lockbox Exception</div>
+            <div class="menu-item" onclick="loadContent('Exception Reports')"><span class="icon">📈</span> Exception Reports</div>
+            <div class="menu-item" onclick="loadContent('eCapture Reports')"><span class="icon">📠</span> eCapture Reports</div>
+            <div class="menu-item" onclick="loadContent('Broadcast Messages')"><span class="icon">✉️</span> Broadcast Messages</div>
+            <div class="menu-item logout" onclick="handleLogout()"><span class="icon">❄️</span> Logout</div>
+        </nav>
+
+        <main class="content-area">
+            <div id="dynamic-content">
+                <center>
+                <h2>Exceptions Status Overview</h2>
+                <table class="standard-grid">
+                    <thead>
+                        <tr>
+                            <th>Status Description</th>
+                            <th>Count</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="clickable-row" onclick="processGridItem('Exception Waiting')">
+                            <td>Exceptions Waiting</td>
+                            <td>16</td>
+                        </tr>
+                        <tr class="clickable-row" onclick="processGridItem('Exception In Use')">
+                            <td>Exceptions In Use</td>
+                            <td>0</td>
+                        </tr>
+                        <tr class="clickable-row" onclick="processGridItem('Exception Completed')">
+                            <td>Exceptions Completed</td>
+                            <td>12</td>
+                        </tr>
+                        <tr class="clickable-row" onclick="processGridItem('Transmission Completed')">
+                            <td>Transmission Completed</td>
+                            <td>5</td>
+                        </tr>
+                        <tr class="clickable-row" onclick="processGridItem('Exception Skipped')">
+                            <td>Exception Skipped</td>
+                            <td>2</td>
+                        </tr>
+                        <tr class="clickable-row total-row" onclick="processGridItem('Total Exception')">
+                            <td><strong>Total Exception from Work Source</strong></td>
+                            <td><strong>35</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="action-panel">
+                    <button class="btn btn-primary" onclick="processAction('Save Progress')">Save Progress</button>
+                    <button class="btn btn-secondary" onclick="processAction('Alternate View')">Alternate View</button>
+                    <button class="btn btn-disabled" disabled>Delete Record</button>
+                </div>
+                </center>
+            </div>
+        </main>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
